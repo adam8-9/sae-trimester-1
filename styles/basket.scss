@@ -1,0 +1,147 @@
+@import "variables";
+
+$btn-color: black;
+$btn-text-color: white;
+
+h1 {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.content-container {
+  @include custom-flex(row, center, center);
+  width: 100%;
+  height: 100vh;
+  margin: 5vh 0 0 0;
+}
+
+.basket-container {
+  @include custom-flex(column, center, flex-start);
+  width: 70%;
+  height: 100vh;
+
+  .basket {
+    width: 100%;
+    @include custom-flex(row, flex-start, center);
+    margin: 0 0 30px 0;
+    .left-section {
+      @include custom-flex(column, center, center);
+      img {
+        height: 15vh;
+      }
+    }
+    .middle-section {
+      //   @include custom-flex(column, center, center);
+      margin: 0 30% 0 5%;
+
+      p {
+        margin: 0 0 10px 0;
+      }
+    }
+    .right-section {
+      @include custom-flex(column, center, center);
+    }
+  }
+
+  .remove-btn {
+    text-decoration: none;
+    background: black;
+    color: aliceblue;
+    height: 4vh;
+    min-width: 133.34px;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+  }
+
+  .remove-btn:hover {
+    background: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    @include border-style(2px);
+  }
+}
+
+.checkout-container {
+  @include custom-flex(column, center, flex-start);
+  height: 100vh;
+  width: 20%;
+  .checkout-box {
+    min-height: 130px;
+    width: clamp(250px, 100%, 328px);
+    @include custom-flex(column, center, space-between);
+    padding: 20px 40px 20px 40px;
+    height: 15vh;
+    // padding: 30% 100% 30% 100%;
+    border: solid black 3px;
+
+    .total-container {
+      min-height: 40px;
+      width: clamp(160px, 100%, 240px);
+      @include custom-flex(row, center, space-between);
+    }
+
+    .checkout-btn {
+      text-decoration: none;
+      background: black;
+      color: aliceblue;
+      min-height: 40px;
+      width: clamp(150px, 100%, 190px);
+      border: none;
+      font: inherit;
+      cursor: pointer;
+    }
+
+    .checkout-btn:hover {
+      background: rgb(255, 255, 255);
+      color: rgb(0, 0, 0);
+      @include border-style(2px);
+    }
+  }
+}
+
+@media (max-width: 1100px) {
+  .basket-container .basket .middle-section {
+    margin: 0 10% 0 5%;
+  }
+}
+
+@media (max-width: 900px) {
+  .content-container {
+    justify-content: space-evenly;
+  }
+
+  .basket-container {
+    width: 30%;
+    .basket {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .middle-section {
+        margin: 20px 0 0 0;
+        text-align: center;
+      }
+    }
+  }
+
+  .checkout-container {
+    width: 0%;
+  }
+}
+
+@media (max-width: 620px) {
+  .content-container {
+    flex-direction: column-reverse;
+    height: unset;
+
+    .basket-container {
+      width: 0;
+      height: unset;
+    }
+
+    .checkout-container {
+      width: 0;
+      height: unset;
+      margin: 0 0 20px 0;
+    }
+  }
+}

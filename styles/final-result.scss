@@ -1,0 +1,192 @@
+@import "variables";
+
+h1 {
+  text-align: center;
+  margin: 5vh 0 0 0;
+}
+
+.center {
+  @include custom-flex(column, center, flex-start);
+  padding-top: 30px;
+  height: 60vh;
+
+  .final-image {
+    width: clamp(200px, 90%, 300px);
+    opacity: 1;
+    visibility: visible;
+    display: block;
+  }
+}
+
+.save-btn {
+  display: block;
+  width: 200px;
+  height: 50px;
+  background: black;
+  color: aliceblue;
+  text-align: center;
+  line-height: 50px;
+  font: inherit;
+  cursor: pointer;
+  padding: 15px;
+  margin-top: 30px;
+  border: 2px solid transparent;
+}
+
+.save-btn:hover {
+  background: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  @include border-style(2px);
+}
+
+#save {
+  display: none;
+}
+
+.modal {
+  opacity: 0;
+  visibility: hidden;
+  width: 90%;
+  background-color: white;
+  @include custom-flex(row, center, center);
+  @include border-style(2px);
+  height: 60vh;
+  padding: 0 2vw 0 2vw;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+//IMPORTANT!!
+//this will only work if the input is in the same element/container its targeting
+
+#save:checked ~ .modal {
+  opacity: 1;
+  visibility: visible;
+}
+
+.header h2 {
+  margin: 3vh 0 3vh 0;
+  text-align: center;
+}
+
+.modal-image-cont {
+  @include custom-flex(row, center, center);
+
+  img {
+    height: 30vh;
+    padding-right: 10vw;
+  }
+}
+
+.modal-right-section {
+  height: 30vh;
+  width: 30vw;
+  @include custom-flex(column, center, space-between);
+}
+
+.modal-close-icon {
+  align-self: end;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.post-creation-options-cont {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.post-creation-options-cont:first-child {
+  border-bottom-style: none;
+}
+
+.post-creation-options {
+  width: clamp(200px, 100%, 250px);
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2vh;
+
+  p {
+    text-align: center;
+  }
+}
+
+.checkout-button {
+  width: 80%;
+  background-color: black;
+  color: aliceblue;
+  height: 5vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3vh;
+  margin-top: 3vh;
+  width: clamp(200px, 100%, 250px);
+}
+
+@media (max-width: 820px) {
+  .center {
+    height: 80vh;
+  }
+
+  .modal {
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 85vh;
+    top: 70%;
+    // position: unset;
+    // transform: none;
+    .modal-image-cont {
+      padding-top: 30px;
+      img {
+        padding-right: 0;
+      }
+    }
+  }
+
+  .center:has(#save:checked) {
+    height: 110vh;
+
+    .modal {
+      height: 100vh;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .center {
+    height: 80vh;
+  }
+
+  .center:has(#save:checked) {
+    height: 110vh;
+
+    .modal {
+      top: 75%;
+      height: 100vh;
+    }
+  }
+}
+
+// @media (max-width: 1030px) {
+//   .center {
+//     height: 80vh;
+//   }
+
+//   .center:has(#save:checked) {
+//     height: 110vh;
+
+//     .modal {
+//       top: 50%;
+//       height: 100vh;
+//     }
+//   }
+// }

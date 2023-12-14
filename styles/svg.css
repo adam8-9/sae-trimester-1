@@ -1,0 +1,35 @@
+/* @font-face {
+    font-family: logo;
+    src: url(logo.ttf);
+} */
+
+/* body{
+    background-image: url('AISE-Background-pixelicious.png');
+    width: 100%;
+    /* background-position: 40% 100%; 
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    min-height: auto;
+    background-attachment: scroll;
+}
+ */
+
+ /* @media screen and (max-width: 991px) { 
+    body {
+      height: 100%;
+      min-height: auto;
+      background-color: rgba(0, 0, 0, 0);
+      background-image:  url('AISE-Background.jpg');
+      background-position: 40% 100%;
+      background-size: cover;
+      background-attachment: scroll;
+      margin-left: 0;
+    }
+} */
+
+
+.logo{
+    font-family: 'Prosto One', sans-serif; font-size:25px;
+    
+}
