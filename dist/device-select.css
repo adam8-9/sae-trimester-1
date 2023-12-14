@@ -1,0 +1,34 @@
+.device-select-box {
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 10vh;
+}
+
+.devices {
+  margin-top: 10vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.devices h2 {
+  margin-bottom: 2vh;
+}
+.devices figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 2vw 0 2vw;
+  border: 2px solid transparent;
+}
+.devices figure img {
+  width: clamp(100px, 100%, 600px);
+}
+.devices figure:hover {
+  border: 2px solid black;
+}/*# sourceMappingURL=device-select.css.map */
